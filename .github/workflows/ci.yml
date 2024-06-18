@@ -34,6 +34,6 @@ jobs:
 
       - name: Push Docker image
         run: |
-          docker push product-app:latest
+          docker push surajc7723/actions-repo:product-app
 
 
