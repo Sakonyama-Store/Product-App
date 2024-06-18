@@ -40,7 +40,7 @@ jobs:
       - name: Build & Push Docker image
         uses: docker/build-push-action@v4
         with:
-          context: docker_folder/
+          context: .
           push: true
           tags: surajc7723/actions-repo:latest
 
