@@ -34,7 +34,7 @@ jobs:
 
       - name: Push Docker image
         run: |
-          docker tag product-app:latest docker.io/actions-repo/product-app:latest
-          docker push docker.io/actions-repo/product-app:latest
+          docker tag product-app:latest surajc7723/actions-repo/product-app:latest
+          docker push surajc7723/actions-repo/product-app:latest
 
 
