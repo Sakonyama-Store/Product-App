@@ -5,7 +5,7 @@ FROM ubuntu:latest
 WORKDIR /app
 
 # Copy the entire application to the working directory
-COPY . /app
+COPY .. /app
 
 # Install dependencies: OpenJDK 11 and Maven
 RUN apt-get update && \
