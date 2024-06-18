@@ -28,7 +28,7 @@ jobs:
 
 
       - name: Build Docker image
-        run: docker build -t Product-app:latest .
+        run: docker build -t product-app:latest .
 
       - name: Log in to Docker Hub
         env:
@@ -38,6 +38,6 @@ jobs:
 
       - name: Push Docker image
         run: |
-          docker tag Product-app:latest Product-app/my-springboot-app:latest
-          docker push my-docker-repo/Product-app:latest
+          docker tag product-app:latest product-app/my-springboot-app:latest
+          docker push my-docker-repo/product-app:latest
 
