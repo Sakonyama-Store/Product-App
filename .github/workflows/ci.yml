@@ -1,11 +1,40 @@
-name: CI
+name: Java Spring Boot CI
 
-on:
-  push:
-    branches:
-      - "*"
+on: [push, pull_request]
 
 jobs:
-  ci:
-    uses: Sakonyama-Store/org-actions/.github/workflows/java-springboot-ci.yml@main
-    secrets: inherit
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        java-version: [11]
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up JDK ${{ matrix.java-version }}
+        uses: actions/setup-java@v3
+        with:
+          java-version: ${{ matrix.java-version }}
+
+      - name: Build with Maven
+        run: mvn clean package
+
+      - name: Run tests
+        run: mvn test
+
+      - name: Build Docker image
+        run: docker build -t Product-app:latest .
+
+      - name: Log in to Docker Hub
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        run: echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
+
+      - name: Push Docker image
+        run: |
+          docker tag Product-app:latest Product-app/my-springboot-app:latest
+          docker push my-docker-repo/Product-app:latest
+
