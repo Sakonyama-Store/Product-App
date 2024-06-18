@@ -26,20 +26,14 @@ jobs:
       - name: Build with Maven
         run: mvn clean install -DskipTests
 
-      - name: Build and Push image
+      - name: Build Docker image
+        run: docker build -t product-app:latest .
+
+      - name: Log in to Docker Hub
+        run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Push Docker image
         run: |
-          echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "actions-repo" --password-stdin
-          docker image build -t actions-repo/product-app:latest .
           docker push actions-repo/product-app:latest
-   
-       
-
-#      - name: Log in to Docker Hub
-#        run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-
-#      - name: Push Docker image
-#        run: |
-#          docker tag product-app:latest surajc7723/actions-repo/product-app:latest
-#          docker push surajc7723/actions-repo/product-app:latest
 
 
