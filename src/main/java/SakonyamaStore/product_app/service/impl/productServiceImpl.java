@@ -1,8 +1,8 @@
-package SakonyamaStore.Product_App.service.impl;
+package SakonyamaStore.product_app.service.impl;
 
-import SakonyamaStore.Product_App.Entity.Product;
-import SakonyamaStore.Product_App.repository.ProductRepository;
-import SakonyamaStore.Product_App.service.ProductService;
+import SakonyamaStore.product_app.Entity.Product;
+import SakonyamaStore.product_app.repository.ProductRepository;
+import SakonyamaStore.product_app.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

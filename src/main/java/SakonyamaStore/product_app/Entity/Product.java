@@ -1,4 +1,4 @@
-package SakonyamaStore.Product_App.Entity;
+package SakonyamaStore.product_app.Entity;
 
 
 import lombok.Data;

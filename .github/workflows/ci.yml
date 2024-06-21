@@ -50,7 +50,7 @@ jobs:
     uses: Sakonyama-Store/org_actions/.github/workflows/java-springboot-ci.yml@main
     with:
       java-version: '11'
-      docker-image-name: 'surajc7723/Product-App'
+      docker-image-name: 'surajc7723/product-app'
     secrets: inherit
 
 

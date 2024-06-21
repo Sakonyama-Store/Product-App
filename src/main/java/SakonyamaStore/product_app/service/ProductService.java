@@ -1,6 +1,6 @@
-package SakonyamaStore.Product_App.service;
+package SakonyamaStore.product_app.service;
 
-import SakonyamaStore.Product_App.Entity.Product;
+import SakonyamaStore.product_app.Entity.Product;
 
 import java.util.List;
 

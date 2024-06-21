@@ -1,7 +1,7 @@
-package SakonyamaStore.Product_App.Controller;
+package SakonyamaStore.product_app.Controller;
 
-import SakonyamaStore.Product_App.Entity.Product;
-import SakonyamaStore.Product_App.service.ProductService;
+import SakonyamaStore.product_app.Entity.Product;
+import SakonyamaStore.product_app.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

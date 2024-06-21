@@ -1,6 +1,6 @@
-package SakonyamaStore.Product_App.repository;
+package SakonyamaStore.product_app.repository;
 
-import SakonyamaStore.Product_App.Entity.Product;
+import SakonyamaStore.product_app.Entity.Product;
 import org.springframework.data.repository.CrudRepository;
 
 public interface ProductRepository extends CrudRepository<Product,Long> {
