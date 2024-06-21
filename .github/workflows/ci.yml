@@ -47,7 +47,7 @@ on: [push, pull_request]
 
 jobs:
   call-reusable-workflow:
-    uses: Suraj0329/org_actions/.github/workflows/java-springboot-ci.yml@main
+    uses: Sakonyama-Store/org_actions/.github/workflows/java-springboot-ci.yml@main
     with:
       java-version: '11'
       docker-image-name: 'surajc7723/Product-App'
