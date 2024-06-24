@@ -8,6 +8,9 @@ on:
 jobs:
   ci:
     uses: Sakonyama-Store/org_actions/.github/workflows/java-springboot-ci.yml@main
+    with:
+      java-version: '11'
     secrets: inherit
+
 
 
